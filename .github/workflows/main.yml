@@ -1,0 +1,16 @@
+name: CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install modules
+      run: yarn
+    - name: Run ESLint
+      run: yarn run eslint --quiet --fix . --ext .ts
+    - name: Prettier
+      run: yarn run prettier -w src/**/*.{ts,json,html,scss}
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Eslint
