@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
     this.userService.getUsers();
     this.userService.users.subscribe(
       (users) => {
-        debugger
+        
         this.rows = users
       },
       (err) => console.log(err)
@@ -37,7 +37,7 @@ export class UserComponent implements OnInit {
   }
 
   onAction(event) {
-    debugger
+    
     switch (event["action"]) {
       case "add":
         this.openAddEditUser("Add");

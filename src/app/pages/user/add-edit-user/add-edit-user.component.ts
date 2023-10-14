@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../core/services/user.service';
 
@@ -12,17 +12,20 @@ export class AddEditUserComponent implements OnInit {
   @Input() type;
   @Input() user;
   userForm: FormGroup;
-  items=["Affordable Medicare Plans","Auto Insurance","Health Insurance","Life Insurance"]
-  selectedItems=["hello"]
+  items=[
+    {label:"Affordable Medicare Plans",value:"affordable-medicare"},
+    {label:"Auto Insurance",value:"auto-insurance"},
+    {label:"Health Insurance",value:"health-insurance"},
+    {label:"Life Insurance",value:"life-insurance"}]
 
   constructor(
     private activeModal: NgbActiveModal,
     private formBuilder: FormBuilder,
     private userService: UserService
-  ) { this.createUserForm();}
+  ) {}
 
   ngOnInit(): void {
-    
+    this.createUserForm();
   }
 
   private createUserForm() {
@@ -33,13 +36,28 @@ export class AddEditUserComponent implements OnInit {
       role:['',Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      forms: this.formBuilder.array(this.getFormsArray())
+      pages: this.formBuilder.array([])
 
     });
+    this.items.forEach(item => {
+      const control = this.formBuilder.group({
+        item: [item.value], // Set default item value
+        checkbox: [false], // Set default checkbox value
+      });
+      this.forms.push(control);
+    });
+    debugger
     if (this.user) {
       let userObj=this.user;
       delete userObj.password
-      this.userForm.patchValue(userObj);
+      this.userForm.patchValue({...userObj});
+      const formArray = this.userForm.get('pages') as FormArray;
+      debugger
+      this.user.pages.forEach((patch, index) => {
+        if (formArray.at(index)) {
+          formArray.at(index).patchValue({"item":patch,"checkbox":true});
+        }
+      });
     }
   }
   getFormsArray(){
@@ -50,14 +68,25 @@ export class AddEditUserComponent implements OnInit {
 
   addUpdateUser() {
     let request;
+    debugger
+    console.log((this.userForm.get('pages').value));
+    debugger
+    let pages=[];
+    (this.userForm.get('pages').value).forEach((page=>{
+      if(page.checkbox){
+        return pages.push(page.item);
+      }
+    }));
     if (this.type == "Update") {
       let reqObj=this.userForm.value;
       if(!this.userForm.value['password']){
         reqObj['password']=this.user["password"];
       }
-      request = this.userService.updateUser(reqObj);
+      request = this.userService.updateUser({...reqObj,pages});
     } else {
-      request = this.userService.addNewUser(this.userForm.value)
+      let reqObj=this.userForm.value;
+      delete reqObj._id
+      request = this.userService.addNewUser({...reqObj,pages})
     }
     request.subscribe(
       resp => {
@@ -68,6 +97,9 @@ export class AddEditUserComponent implements OnInit {
 
   close() {
     this.activeModal.close("closed")
+  }
+  get forms() {
+    return this.userForm.get('pages') as FormArray;
   }
 
 }

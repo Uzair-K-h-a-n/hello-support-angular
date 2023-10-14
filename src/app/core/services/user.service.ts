@@ -26,7 +26,7 @@ export class UserService {
         return this.http.get(url)
             .subscribe(
                 (users:any) =>{
-                    debugger
+                    
                     this.users.next(users)},
                 err => console.log(err)
             );

@@ -87,8 +87,11 @@
                                 Call Time
                             </label>
                             <div class=" input-group input-group-merge">
-                                <input class=" form-control" placeholder="Call time" type="text"
-                                    formControlName="callTime" />
+                                <select class="form-control" aria-invalid="false" formControlName="callTime" name="call">
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                </select>
                             </div>
                         </div>
                     </div>

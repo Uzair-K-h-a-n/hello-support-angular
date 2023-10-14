@@ -8,5 +8,7 @@ export class Auth {
 
 export interface AuthResponseData {
     "message": string,
-    "token": string
+    "token": string,
+    "role":string,
+    "pages":string[]
 }

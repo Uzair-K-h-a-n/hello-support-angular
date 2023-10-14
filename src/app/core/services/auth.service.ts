@@ -25,6 +25,8 @@ export class AuthService {
     this.http.post<AuthResponseData>(this.apiPath + '/user/login', body)
       .subscribe(resp => {
         this.saveToken(resp.token);
+        this.saveRoles(resp.role)
+        this.saveTemplates(resp.pages)
         this.router.navigateByUrl("/dashboards/dashboard");
       },err => console.log(err));
   }
@@ -45,6 +47,28 @@ export class AuthService {
 
   public saveToken(token) {
     localStorage.setItem("a-token", token);
+  }
+  public saveTemplates(templates){
+    localStorage.setItem("user-templates", templates);
+  }
+  public saveRoles(roles){
+    localStorage.setItem("user-roles", roles);
+  }
+  public getTemplates() {
+    try {
+      return localStorage.getItem("user-templates");
+    }
+    catch (ex) {
+      console.log(ex);
+    }
+  }
+  public getRoles() {
+    try {
+      return localStorage.getItem("user-roles");
+    }
+    catch (ex) {
+      console.log(ex);
+    }
   }
 
   public clearToken() {

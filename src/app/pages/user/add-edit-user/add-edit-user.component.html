@@ -43,8 +43,8 @@
                                 Role</label>
                             <div class=" input-group input-group-merge">
                                 <select class=" form-control" formControlName="role">
-                                    <option value="1" selected>Admin</option>
-                                    <option value="2" selected>User</option>
+                                    <option value="admin" selected>Admin</option>
+                                    <option value="user" selected>User</option>
                                 </select>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    <div formArrayName="forms" class="col-md-6">
+                    <!-- <div formArrayName="forms" class="col-md-6">
                         <label class="form-control-label">Forms</label>
                         <div style="display: inline-flex">
                         <div *ngFor="let control of userForm.get('forms').controls; let i = index" class="form-group">
@@ -81,8 +81,17 @@
                                     placeholder="Item {{ i + 1 }}" />
                             
                         </div>
+                    </div> -->
+                    <div formArrayName="pages"  class="col-md-6">
+                        <div style="display: inline-flex">
+                        <div *ngFor="let control of userForm.get('pages').controls; let i = index" [formGroupName]="i">
+                          <div class="form-group">
+                            <label for="item{{i}}-value">{{items[i].label}}</label>
+                            <input type="checkbox" formControlName="checkbox" id="item{{i}}-value" [checked]="control.get('checkbox').value" />
+                          </div>
+                        </div>
                     </div>
-                    </div>
+                      </div>
                 </div>
 
             </div>

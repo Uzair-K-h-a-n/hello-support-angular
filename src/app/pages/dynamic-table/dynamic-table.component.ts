@@ -13,7 +13,7 @@ export class DynamicTableComponent implements OnInit {
     return this._rows;
   }
   public set rows(value) {
-    debugger
+    
     this._rows = value;
     this.temp = this.rows.map((prop, key) => {
       return {

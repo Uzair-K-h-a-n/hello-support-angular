@@ -13,6 +13,7 @@ import { LifeInsuranceComponent } from './pages/insurance-Components/life-insura
 import { HeathInsuranceComponent } from './pages/insurance-Components/heath-insurance/heath-insurance.component';
 import { AutoInsuranceComponent } from './pages/insurance-Components/auto-insurance/auto-insurance.component';
 import { AuthGuard } from './core/guards/auth.guard';
+ import {AdminAuthGuard} from './core/guards/admin-auth.guard'
 
 const routes: Routes = [
 	{
@@ -21,27 +22,19 @@ const routes: Routes = [
 		component: AdminLayoutComponent,
 		children: [
 			{
+				path: '',
+				canActivate: [AuthGuard],
+				component: FormsComponent,
+			},
+			{
 				path: 'forms',
 				canActivate: [AuthGuard],
 				component: FormsComponent,
 			},
 			{
 				path: 'users',
-				canActivate: [AuthGuard],
+				canActivate: [AdminAuthGuard],
 				component: UserComponent,
-			},
-			{
-				path: 'customers',
-				canActivate: [AuthGuard],
-				component: CustomerComponent,
-			},
-
-
-			{
-				path: 'dashboard',
-				canActivate: [AuthGuard],
-				loadChildren:
-					'./pages/dashboards/dashboards.module#DashboardsModule',
 			},
 			{
 				path: 'examples',
@@ -82,7 +75,7 @@ const routes: Routes = [
 	},
 	{
 		path: '**',
-		redirectTo: 'dashboard',
+		redirectTo: 'forms',
 	},
 ];
 
