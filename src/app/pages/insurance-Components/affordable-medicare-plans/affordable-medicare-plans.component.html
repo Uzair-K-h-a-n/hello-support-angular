@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<form class=" container-fluid mt--6 pb-3" [formGroup]="affordableMedicareForm">
+<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]="affordableMedicareForm">
     <div class=" card-wrapper">
         <div class=" card">
             <div class=" card-body">
@@ -97,10 +97,11 @@
                     </div>
 
                 </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary" (click)="addData()">Submit</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="text-right">
-        <button type="submit" class="btn btn-primary" (click)="addData()">Submit</button>
+        
     </div>
 </form>

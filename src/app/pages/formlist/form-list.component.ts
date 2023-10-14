@@ -22,6 +22,11 @@ export class FormsComponent implements OnInit {
 
   ngOnInit(): void {
     this.setProductColumns();
+    this.getTemplateList();
+    
+  }
+  getTemplateList(){
+    this. rows = []
     const userTemplates=this.authService.getTemplates()
     this.templates.forEach(temp=>{
       if(userTemplates.includes(temp.formName)){
@@ -42,6 +47,10 @@ export class FormsComponent implements OnInit {
   }
   filterTable($event){
     let val = $event.target.value;
+    if(!val){
+      this.getTemplateList();
+      return
+    }
     let temp=this.rows;
     this.rows = temp.filter(function(d) {
       for (var key in d) {

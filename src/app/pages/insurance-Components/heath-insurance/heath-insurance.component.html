@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<form class=" container-fluid mt--6 pb-3" [formGroup]="affordableMedicareForm">
+<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]="affordableMedicareForm">
     <div class=" card-wrapper">
         <div class=" card">
             <div class=" card-body">
@@ -87,17 +87,32 @@
                                 Coverage Amount
                             </label>
                             <div class=" input-group input-group-merge">
-                                <input class=" form-control" placeholder="Coverage Amount"" type="text"
+                                <input class=" form-control" placeholder="Coverage Amount" type="text"
                                     formControlName="coverageAmount" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Call Time
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <select class="form-control" aria-invalid="false" formControlName="callTime" name="call">
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                </select>
                             </div>
                         </div>
                     </div>
 
                 </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary" (click)="addData()">Submit</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="text-right">
-        <button type="submit" class="btn btn-primary" (click)="addData()">Submit</button>
-    </div>
+  
 </form>
