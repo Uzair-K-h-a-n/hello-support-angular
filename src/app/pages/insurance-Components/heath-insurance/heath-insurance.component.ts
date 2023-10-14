@@ -40,6 +40,7 @@ export class HeathInsuranceComponent implements OnInit {
   }
 
   addData() {
+    debugger
     this.productService.addHealthInsurance(this.healthInsuranceForm.value).subscribe(
       (res) => {
       },

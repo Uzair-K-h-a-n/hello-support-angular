@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]="affordableMedicareForm">
+<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]="autoInsuranceForm">
     <div class=" card-wrapper">
         <div class=" card">
             <div class=" card-body">
@@ -59,17 +59,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" col-md-6">
-                        <div class=" form-group">
-                            <label class=" form-control-label">
-                                Vehicle MakeModel Year
-                            </label>
-                            <div class=" input-group input-group-merge">
-                                <input class=" form-control" placeholder="Vehicle MakeModel Year" type="text"
-                                    formControlName="vehicleMakeModelYear" />
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     <div class=" col-md-6">
                         <div class=" form-group">
@@ -90,6 +80,17 @@
                             <div class=" input-group input-group-merge">
                                 <input class=" form-control" placeholder="Zip Code" type="text"
                                     formControlName="zipCode" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Vehicle MakeModel Year
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Vehicle MakeModel Year" type="text"
+                                    formControlName="vehicleMakeModelYear" />
                             </div>
                         </div>
                     </div>
