@@ -33,7 +33,7 @@ export class LifeInsuranceComponent implements OnInit {
       state: ['', Validators.required],
       zipCode: ['', Validators.required],
       callTime: ['', Validators.required],
-      yearlyHouseholdIncome: ['', Validators.required],
+      coverageAmount:['', Validators.required]
 
     });
   }

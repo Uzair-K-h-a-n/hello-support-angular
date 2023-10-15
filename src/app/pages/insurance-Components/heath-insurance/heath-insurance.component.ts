@@ -34,7 +34,8 @@ export class HeathInsuranceComponent implements OnInit {
       state: ['', Validators.required],
       zipCode: ['', Validators.required],
       callTime: ['', Validators.required],
-      coverageAmount:['', Validators.required]
+      yearlyHouseholdIncome: ['', Validators.required]
+     
 
     });
   }
