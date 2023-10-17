@@ -27,7 +27,10 @@ export class CustomerComponent implements OnInit {
     this.customerService.getCustomers();
     this.customerService.customers.subscribe(
       (customers) => (this.rows = customers),
-      (err) => console.log(err)
+       (err) =>{
+        this.loader=false; 
+        console.log(err)
+      }
     );
   }
 

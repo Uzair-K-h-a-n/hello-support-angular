@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ProductCategoryService } from "../../../core/services/product-category.service";
 import { InsuranceService } from "../../../core/services/insurance.service";
+import { ToastrService } from "ngx-toastr";
 
 
 @Component({
@@ -13,11 +14,13 @@ export class HeathInsuranceComponent implements OnInit {
 
   healthInsuranceForm: FormGroup;
   focus = false;
+  loader=false;
 
   constructor(
     private formBuilder: FormBuilder,
     private productService: InsuranceService,
-    private productCategoryService: ProductCategoryService
+    private productCategoryService: ProductCategoryService,
+    private toastr: ToastrService,
   ) {}
 
   ngOnInit(): void {
@@ -30,9 +33,9 @@ export class HeathInsuranceComponent implements OnInit {
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
       age:['',Validators.required],
-      phone: ['', Validators.required],
+      phone: ['', Validators.compose([ Validators.required, Validators.pattern(/^[0-9+*/-]*$/)])],
+      zipCode: ['', Validators.compose([ Validators.required, Validators.pattern(/^[0-9+*/-]*$/)])],
       state: ['', Validators.required],
-      zipCode: ['', Validators.required],
       callTime: ['', Validators.required],
       yearlyHouseholdIncome: ['', Validators.required]
      
@@ -41,11 +44,22 @@ export class HeathInsuranceComponent implements OnInit {
   }
 
   addData() {
-    debugger
+    this.healthInsuranceForm.markAllAsTouched();
+    if(!this.healthInsuranceForm.valid){
+      return
+    }
+    this.loader=true;
     this.productService.addHealthInsurance(this.healthInsuranceForm.value).subscribe(
       (res) => {
+        this.loader=false;
+        this.toastr.success("Form successfully submitted", 'Success', {
+          timeOut: 2000, // Display duration in milliseconds
+        });
       },
-      (err) => console.log(err)
+       (err) =>{
+        this.loader=false; 
+        console.log(err)
+      }
     );
   }
 }

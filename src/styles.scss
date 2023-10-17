@@ -1,5 +1,60 @@
 .form-padding {
     padding: 0% 15% 0% 15% !important;
 }
-
-/* You can add global styles to this file, and also import other style files */
+.toast-top-center {
+    text-align: center !important;
+    top: 0 !important;
+    right: 25% !important;
+    width: 50% !important;
+}
+.toast-container{
+    text-align: center !important;
+}
+.toast-success{
+    background-color: hsl(98, 84%, 22%) !important;
+    color: #ffffff !important
+}
+.custom-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+    border-radius: 8px; /* Adjust the border-radius as needed */
+    box-shadow: none; /* Remove the box-shadow */
+    padding: 10px; /* Adjust the padding as needed */
+    text-align: center; /* Center-align the text */
+  
+    /* Remove icons and other elements */
+    .ngx-toastr-icon {
+      display: none;
+    }
+    .ngx-toastr-title {
+      display: none;
+    }
+    .ngx-toastr-close-button {
+      display: none;
+    }
+   
+  }
+  .loader {
+      width: 1rem !important;
+      height: 1rem !important;
+      border-width: 0.2em !important;
+  }
+  .spinnerLoader{
+    display: inline-block !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    vertical-align: text-bottom !important;
+    border: 0.25em solid currentColor !important;
+    border-right-color: transparent !important;
+    border-radius: 50% !important;
+    animation: b .75s linear infinite !important;
+  }
+  @keyframes b {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

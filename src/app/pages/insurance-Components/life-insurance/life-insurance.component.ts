@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ProductCategoryService } from "../../../core/services/product-category.service";
 import { InsuranceService } from "../../../core/services/insurance.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: 'app-life-insurance',
@@ -10,13 +11,15 @@ import { InsuranceService } from "../../../core/services/insurance.service";
 })
 export class LifeInsuranceComponent implements OnInit {
 
-  affordableMedicareForm: FormGroup;
+  lifeInsuranceForm: FormGroup;
   focus = false;
+  loader=false;
 
   constructor(
     private formBuilder: FormBuilder,
     private productService: InsuranceService,
-    private productCategoryService: ProductCategoryService
+    private productCategoryService: ProductCategoryService,
+    private toastr: ToastrService,
   ) {}
 
   ngOnInit(): void {
@@ -25,13 +28,13 @@ export class LifeInsuranceComponent implements OnInit {
   }
 
   createForm() {
-    this.affordableMedicareForm = this.formBuilder.group({
+    this.lifeInsuranceForm = this.formBuilder.group({
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
       age:['',Validators.required],
-      phone: ['', Validators.required],
+      phone: ['', Validators.compose([ Validators.required, Validators.pattern(/^[0-9+*/-]*$/)])],
+      zipCode: ['', Validators.compose([ Validators.required, Validators.pattern(/^[0-9+*/-]*$/)])],
       state: ['', Validators.required],
-      zipCode: ['', Validators.required],
       callTime: ['', Validators.required],
       coverageAmount:['', Validators.required]
 
@@ -39,10 +42,22 @@ export class LifeInsuranceComponent implements OnInit {
   }
 
   addData() {
-    this.productService.addLifeInsurance(this.affordableMedicareForm.value).subscribe(
+    this.lifeInsuranceForm.markAllAsTouched();
+    if(!this.lifeInsuranceForm.valid){
+      return
+    }
+    this.loader=true;
+    this.productService.addLifeInsurance(this.lifeInsuranceForm.value).subscribe(
       (res) => {
+        this.loader=false;
+        this.toastr.success("Form successfully submitted", 'Success', {
+          timeOut: 2000, // Display duration in milliseconds
+        });
       },
-      (err) => console.log(err)
+       (err) =>{
+        this.loader=false; 
+        console.log(err)
+      }
     );
   }
 }

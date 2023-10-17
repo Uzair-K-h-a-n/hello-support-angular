@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { UserService } from "../../core/services/user.service";
 import { AddEditUserComponent } from "./add-edit-user/add-edit-user.component";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-user",
@@ -17,11 +18,12 @@ import { AddEditUserComponent } from "./add-edit-user/add-edit-user.component";
 export class UserComponent implements OnInit {
   rows = [];
   columns = [];
-  actions = ["edit"];
+  actions = ["edit","delete"];
 
   constructor(
     private modalService: NgbModal,
-    private userService: UserService
+    private userService: UserService,
+    private toastr: ToastrService,
   ) {}
 
   ngOnInit(): void {
@@ -32,7 +34,9 @@ export class UserComponent implements OnInit {
         
         this.rows = users
       },
-      (err) => console.log(err)
+       (err) =>{
+        console.log(err)
+      }
     );
   }
 
@@ -46,7 +50,7 @@ export class UserComponent implements OnInit {
         this.openAddEditUser("Update", event["data"]);
         break;
       case "delete":
-        this.deleteUsers(event["data"].id);
+        this.deleteUsers(event["data"]._id);
         break;
       default:
         console.log("Unknown Action " + event["action"]);
@@ -70,8 +74,13 @@ export class UserComponent implements OnInit {
     );
   }
 
-  deleteUsers(row) {
-    this.userService.deleteUser(row.id);
+  deleteUsers(id) {
+    this.userService.deleteUser(id) .subscribe(
+      res => {
+        this.userService.getUsers()
+      this.showSnackBar("User successfully deleted")},
+      err => console.log(err)
+  );
   }
 
   setUserColumns() {
@@ -82,4 +91,9 @@ export class UserComponent implements OnInit {
       { prop: "email", name: "Email" },
     ];
   }
+  showSnackBar(message){
+    this.toastr.success(message, 'Success', {
+      timeOut: 2000, // Display duration in milliseconds
+    });
+}
 }

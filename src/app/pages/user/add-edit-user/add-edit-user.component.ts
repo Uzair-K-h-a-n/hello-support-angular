@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../core/services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-edit-user',
@@ -12,6 +13,7 @@ export class AddEditUserComponent implements OnInit {
   @Input() type;
   @Input() user;
   userForm: FormGroup;
+  loader=false;
   items=[
     {label:"Affordable Medicare Plans",value:"affordable-medicare"},
     {label:"Auto Insurance",value:"auto-insurance"},
@@ -21,7 +23,9 @@ export class AddEditUserComponent implements OnInit {
   constructor(
     private activeModal: NgbActiveModal,
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private toastr: ToastrService,
+    private ref: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -34,8 +38,8 @@ export class AddEditUserComponent implements OnInit {
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
       role:['',Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: [null, Validators.compose([Validators.email, Validators.required, Validators.pattern("^[a-z0-9!#$%&'*+\\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$")])],
+      password: [''],
       pages: this.formBuilder.array([])
 
     });
@@ -68,7 +72,13 @@ export class AddEditUserComponent implements OnInit {
 
   addUpdateUser() {
     let request;
-    debugger
+    let msg
+    this.userForm.markAllAsTouched();
+    this.ref.detectChanges();
+    if(!this.userForm.valid){
+      return true
+    }
+    this.loader=true;
     console.log((this.userForm.get('pages').value));
     debugger
     let pages=[];
@@ -82,17 +92,23 @@ export class AddEditUserComponent implements OnInit {
       if(!this.userForm.value['password']){
         reqObj['password']=this.user["password"];
       }
-      request = this.userService.updateUser({...reqObj,pages});
+      msg="User Successfully Updated"
+      request = this.userService.updateUser({...reqObj,pages})
     } else {
       let reqObj=this.userForm.value;
       delete reqObj._id
+      msg="User Successfully Created"
       request = this.userService.addNewUser({...reqObj,pages})
     }
     request.subscribe(
       resp => {
         this.userService.getUsers();
-        this.activeModal.close("closed");
-    },err=> console.log(err))
+        this.loader=false;
+        this.showSnackBar(msg)
+    },err=> {
+      console.log(err)
+      this.loader=false
+    })
   }
 
   close() {
@@ -101,5 +117,10 @@ export class AddEditUserComponent implements OnInit {
   get forms() {
     return this.userForm.get('pages') as FormArray;
   }
+  showSnackBar(message){
+        this.toastr.success(message, 'Success', {
+          timeOut: 2000, // Display duration in milliseconds
+        });
+    }
 
 }

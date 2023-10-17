@@ -2,8 +2,8 @@
     <div class=" container-fluid">
         <div class=" header-body">
             <div class=" row align-items-center py-4">
-                <div class=" col-lg-6 col-7">
-                    <h6 class=" h2 text-white d-inline-block mb-0">{{type+" User"}}</h6>
+                <div class=" col-lg-12 col-12" style="text-align: center">
+                    <h6 class=" h1 text-white d-inline-block mb-0">{{type+" User"}}</h6>
                 </div>
             </div>
         </div>
@@ -24,6 +24,11 @@
                                 <input class=" form-control" placeholder="First name" type="text"
                                     formControlName="first_name" />
                             </div>
+                            <span *ngIf="userForm?.controls['first_name']?.invalid && userForm?.controls['first_name']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="userForm?.controls['first_name']?.errors?.required">
+                                    Please enter first name
+                                </span>
+                            </span>
                         </div>
                     </div>
                     <div class=" col-md-6">
@@ -35,6 +40,11 @@
                                 <input class=" form-control" placeholder="Last name" type="text"
                                     formControlName="last_name" />
                             </div>
+                            <span *ngIf="userForm?.controls['last_name']?.invalid && userForm?.controls['last_name']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="userForm?.controls['last_name']?.errors?.required">
+                                    Please enter last name
+                                </span>
+                            </span>
                         </div>
                     </div>
                     <div class=" col-md-6">
@@ -47,6 +57,11 @@
                                     <option value="user" selected>User</option>
                                 </select>
                             </div>
+                            <span *ngIf="userForm?.controls['role']?.invalid && userForm?.controls['role']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="userForm?.controls['role']?.errors?.required">
+                                    Please select role
+                                </span>
+                            </span>
                         </div>
                     </div>
                     <div class=" col-md-6">
@@ -57,7 +72,15 @@
                             <div class=" input-group input-group-merge">
                                 <input class=" form-control" placeholder="Your email" type="email"
                                     formControlName="email" />
-                            </div>
+                            </div> 
+                            <span *ngIf="userForm?.controls['email']?.invalid && userForm?.controls['email']?.touched" class="validation-error-message text-danger ">
+                                <span *ngIf="userForm?.controls['email']?.errors?.required">
+                                    Please enter email
+                                </span>
+                                <span *ngIf="(userForm?.controls['email']?.errors) && !userForm?.controls['email']?.errors?.required">
+                                    Please enter valid email
+                                </span>
+                            </span>
                         </div>
                     </div>
                     <div class=" col-md-6">
@@ -74,9 +97,9 @@
                     <!-- <div formArrayName="forms" class="col-md-6">
                         <label class="form-control-label">Forms</label>
                         <div style="display: inline-flex">
-                        <div *ngFor="let control of userForm.get('forms').controls; let i = index" class="form-group">
+                        <div *ngFor="let control of userForm?.get('forms')?.controls; let i = index" class="form-group">
                             
-                                <label class="form-control-label">{{control.value }}</label>
+                                <label class="form-control-label">{{control?.value }}</label>
                                 <input [formControlName]="i" type="checkbox" 
                                     placeholder="Item {{ i + 1 }}" />
                             
@@ -84,10 +107,10 @@
                     </div> -->
                     <div formArrayName="pages"  class="col-md-6">
                         <div style="display: inline-flex">
-                        <div *ngFor="let control of userForm.get('pages').controls; let i = index" [formGroupName]="i">
+                        <div *ngFor="let control of userForm?.get('pages')?.controls; let i = index" [formGroupName]="i">
                           <div class="form-group">
-                            <label for="item{{i}}-value">{{items[i].label}}</label>
-                            <input type="checkbox" formControlName="checkbox" id="item{{i}}-value" [checked]="control.get('checkbox').value" />
+                            <label for="item{{i}}-value">{{items[i]?.label}}</label>
+                            <input type="checkbox" formControlName="checkbox" id="item{{i}}-value" [checked]="control?.get('checkbox')?.value" />
                           </div>
                         </div>
                     </div>
@@ -99,6 +122,9 @@
     </div>
     <div class="text-right">
         <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
-        <button type="submit" class="btn btn-primary" (click)="addUpdateUser()">{{type}}</button>
+        <button type="submit" class="btn btn-primary" (click)="addUpdateUser()" [disabled]="loader">
+            <span *ngIf="loader" class="spinnerLoader loader" role="status" aria-hidden="true"></span> 
+            <span *ngIf="!loader">{{type}}</span>
+        </button>
     </div>
 </form>

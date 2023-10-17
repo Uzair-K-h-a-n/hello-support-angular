@@ -44,11 +44,7 @@ export class UserService {
 
     public deleteUser(userId: Number) {
         const url = this.apiPath + `/user/${userId}`;
-        this.http.delete(url)
-            .subscribe(
-                res => this.getUsers(),
-                err => console.log(err)
-            );
+        return this.http.delete(url)
     }
 
 }

@@ -43,7 +43,9 @@ import { HeathInsuranceComponent } from './pages/insurance-Components/heath-insu
 		RouterModule,
 		BsDropdownModule.forRoot(),
 		AppRoutingModule,
-		ToastrModule.forRoot(),
+		ToastrModule.forRoot( {positionClass: 'toast-top-center', enableHtml: true, // Enable HTML for the toast message
+		preventDuplicates: true, // Prevent duplicate toasts
+		closeButton: false, toastClass: 'ngx-toastr-custom-class'}),
 		CollapseModule.forRoot(),
 		TagInputModule,
 		LandingLayoutModule,
