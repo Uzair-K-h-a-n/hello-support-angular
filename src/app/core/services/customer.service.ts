@@ -8,7 +8,7 @@ import { Customer } from "../../shared/models/customer.model";
 })
 export class CustomerService {
 
-    apiPath = environment.companyApiPath;
+    apiPath = environment.apiPath;
 
     public customers: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
 

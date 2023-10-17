@@ -8,7 +8,7 @@ import { User } from "../../shared/models/user.model";
 })
 export class UserService {
 
-    apiPath = environment.companyApiPath;
+    apiPath = environment.apiPath;
 
     public users: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
 

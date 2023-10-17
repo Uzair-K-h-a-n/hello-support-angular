@@ -8,7 +8,7 @@ import { environment } from "../../../environments/environment";
 })
 export class ProductCategoryService {
 
-    apiPath = environment.companyApiPath;
+    apiPath = environment.apiPath;
 
     public productCatagories: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
 

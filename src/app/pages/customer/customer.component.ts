@@ -28,7 +28,6 @@ export class CustomerComponent implements OnInit {
     this.customerService.customers.subscribe(
       (customers) => (this.rows = customers),
        (err) =>{
-        this.loader=false; 
         console.log(err)
       }
     );

@@ -12,7 +12,7 @@ import { Observable } from "rxjs";
 })
 export class AuthService {
 
-  private apiPath: string = environment.companyApiPath;
+  private apiPath: string = environment.apiPath;
   // private apiPath: string = environment.apiPath;
 
   constructor(private http: HttpClient, private router: Router) { }

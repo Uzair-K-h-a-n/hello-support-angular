@@ -8,7 +8,7 @@ import { environment } from "../../../environments/environment";
 })
 export class InsuranceService {
 
-    apiPath = environment.companyApiPath;
+    apiPath = environment.apiPath;
 
     public insuranceDatas: BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
