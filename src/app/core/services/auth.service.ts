@@ -6,6 +6,7 @@ import { environment } from "../../../environments/environment";
 import { AuthResponseData } from "../../shared/models/auth.model";
 import { Company } from "../../shared/models/company.model";
 import { Observable } from "rxjs";
+import jwtDecode from 'jwt-decode';
 
 @Injectable({
   providedIn: "root",
@@ -69,6 +70,14 @@ export class AuthService {
     catch (ex) {
       console.log(ex);
     }
+  }
+  public getValidToken(token){
+      const tokenInfo:any = jwtDecode(token); 
+      const expirationTime = tokenInfo.exp * 1000;
+      if (expirationTime > Date.now()) {
+        return true; // Token is still valid
+      }
+      return false
   }
 
   public clearToken() {

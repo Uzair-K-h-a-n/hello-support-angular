@@ -16,12 +16,11 @@ export class AdminAuthGuard implements CanActivate {
         const token = this.authService.getToken();
 
         if (!!token){
-            
+            const role = this.authService.getRoles();
+            if(role=='admin' && this.authService.getValidToken(token)){
              return true;
-         }
-         const role = this.authService.getToken();
-         if(role=='admin'){
-            return true;
+            }
+           this.authService.logout()
          }
         return this.router.createUrlTree(['/auth/login']);
     }

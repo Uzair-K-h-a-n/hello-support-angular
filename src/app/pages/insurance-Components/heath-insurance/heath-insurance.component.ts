@@ -51,14 +51,18 @@ export class HeathInsuranceComponent implements OnInit {
     this.loader=true;
     this.productService.addHealthInsurance(this.healthInsuranceForm.value).subscribe(
       (res) => {
+        this.healthInsuranceForm.reset();
         this.loader=false;
         this.toastr.success("Form successfully submitted", 'Success', {
           timeOut: 2000, // Display duration in milliseconds
         });
       },
-       (err) =>{
-        this.loader=false; 
+          (err) => {
         console.log(err)
+        this.loader = false;
+        this.toastr.error(err.error.Message, "Error", {
+          timeOut: 2000, // Display duration in milliseconds
+        });
       }
     );
   }
