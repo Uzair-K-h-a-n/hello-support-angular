@@ -14,6 +14,10 @@ import { HeathInsuranceComponent } from './pages/insurance-Components/heath-insu
 import { AutoInsuranceComponent } from './pages/insurance-Components/auto-insurance/auto-insurance.component';
 import { AuthGuard } from './core/guards/auth.guard';
  import {AdminAuthGuard} from './core/guards/admin-auth.guard'
+import { AffordableMedicarePlansPublicComponent } from './pages/insurance-components-public/affordable-medicare-plans-public/affordable-medicare-plans-public.component';
+import { HeathInsurancePublicComponent } from './pages/insurance-components-public/heath-insurance-public/heath-insurance-public.component';
+import { AutoInsurancePublicComponent } from './pages/insurance-components-public/auto-insurance-public/auto-insurance-public.component';
+import { LifeInsurancePublicComponent } from './pages/insurance-components-public/life-insurance-public/life-insurance-public.component';
 
 const routes: Routes = [
 	{
@@ -72,6 +76,22 @@ const routes: Routes = [
 		path:'life-insurance',
 		canActivate: [AuthGuard],
 		component:LifeInsuranceComponent
+	},
+	{
+		path:'affordable-medicare-public',
+		component:AffordableMedicarePlansPublicComponent
+	},
+	{
+		path:'health-insurance-public',
+		component:HeathInsurancePublicComponent
+	},
+	{
+		path:'auto-insurance-public',
+		component:AutoInsurancePublicComponent
+	},
+	{
+		path:'life-insurance-public',
+		component:LifeInsurancePublicComponent
 	},
 	{
 		path: '**',

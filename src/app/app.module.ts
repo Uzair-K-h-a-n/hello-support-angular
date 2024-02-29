@@ -34,6 +34,10 @@ import {AffordableMedicarePlansComponent} from './pages/insurance-Components/aff
 import { LifeInsuranceComponent } from './pages/insurance-Components/life-insurance/life-insurance.component';
 import { AutoInsuranceComponent } from './pages/insurance-Components/auto-insurance/auto-insurance.component';
 import { HeathInsuranceComponent } from './pages/insurance-Components/heath-insurance/heath-insurance.component'
+import { AffordableMedicarePlansPublicComponent } from './pages/insurance-components-public/affordable-medicare-plans-public/affordable-medicare-plans-public.component';
+import { LifeInsurancePublicComponent } from './pages/insurance-components-public/life-insurance-public/life-insurance-public.component';
+import { AutoInsurancePublicComponent } from './pages/insurance-components-public/auto-insurance-public/auto-insurance-public.component';
+import { HeathInsurancePublicComponent } from './pages/insurance-components-public/heath-insurance-public/heath-insurance-public.component';
 @NgModule({
 	imports: [
 		BrowserAnimationsModule,
@@ -72,7 +76,11 @@ import { HeathInsuranceComponent } from './pages/insurance-Components/heath-insu
 		AffordableMedicarePlansComponent,
 		LifeInsuranceComponent,
 		AutoInsuranceComponent,
-		HeathInsuranceComponent
+		HeathInsuranceComponent,
+		AffordableMedicarePlansPublicComponent,
+		LifeInsurancePublicComponent,
+		AutoInsurancePublicComponent,
+		HeathInsurancePublicComponent,
 	],
 	providers: [
 		{

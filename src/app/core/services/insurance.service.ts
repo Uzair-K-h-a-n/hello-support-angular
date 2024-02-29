@@ -31,4 +31,20 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance/life-insurance`;
         return this.http.post(url, insuranceData);
     }
+    public addAutoInsurancePublicForm(insuranceData) {
+        const url = this.apiPath + `/insurance-public/auto-insurance-public`;
+        return this.http.post(url, insuranceData);
+    }
+    public addAffordableMedicarePublic(insuranceData) {
+        const url = this.apiPath + `/insurance-public/affordable-medicare-plans-public`;
+        return this.http.post(url, insuranceData);
+    }
+    public addHealthInsurancePublic(insuranceData) {
+        const url = this.apiPath + `/insurance-public/health-insurance-public`;
+        return this.http.post(url, insuranceData);
+    }
+    public addLifeInsurancePublic(insuranceData) {
+        const url = this.apiPath + `/insurance-public/life-insurance-public`;
+        return this.http.post(url, insuranceData);
+    }
 }
