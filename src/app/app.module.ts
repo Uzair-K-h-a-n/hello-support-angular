@@ -38,6 +38,8 @@ import { AffordableMedicarePlansPublicComponent } from './pages/insurance-compon
 import { LifeInsurancePublicComponent } from './pages/insurance-components-public/life-insurance-public/life-insurance-public.component';
 import { AutoInsurancePublicComponent } from './pages/insurance-components-public/auto-insurance-public/auto-insurance-public.component';
 import { HeathInsurancePublicComponent } from './pages/insurance-components-public/heath-insurance-public/heath-insurance-public.component';
+import { MVACompensationComponent } from './pages/insurance-Components/mva-compensation/mva-compensation.component';
+import { MVACompensationPublicComponent } from './pages/insurance-components-public/mva-compensation-public/mva-compensation-public.component';
 @NgModule({
 	imports: [
 		BrowserAnimationsModule,
@@ -81,6 +83,8 @@ import { HeathInsurancePublicComponent } from './pages/insurance-components-publ
 		LifeInsurancePublicComponent,
 		AutoInsurancePublicComponent,
 		HeathInsurancePublicComponent,
+		MVACompensationComponent,
+		MVACompensationPublicComponent,
 	],
 	providers: [
 		{

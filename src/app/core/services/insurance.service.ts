@@ -31,6 +31,10 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance/life-insurance`;
         return this.http.post(url, insuranceData);
     }
+    public addMVACompensation(insuranceData) {
+        const url = this.apiPath + `/insurance/mva-compensation`;
+        return this.http.post(url, insuranceData);
+    }
     public addAutoInsurancePublicForm(insuranceData) {
         const url = this.apiPath + `/insurance-public/auto-insurance-public`;
         return this.http.post(url, insuranceData);
@@ -45,6 +49,10 @@ export class InsuranceService {
     }
     public addLifeInsurancePublic(insuranceData) {
         const url = this.apiPath + `/insurance-public/life-insurance-public`;
+        return this.http.post(url, insuranceData);
+    }
+    public addMVACompensationPublic(insuranceData) {
+        const url = this.apiPath + `/insurance-public/mva-compensation-public`;
         return this.http.post(url, insuranceData);
     }
 }

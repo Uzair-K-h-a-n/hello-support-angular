@@ -18,6 +18,8 @@ import { AffordableMedicarePlansPublicComponent } from './pages/insurance-compon
 import { HeathInsurancePublicComponent } from './pages/insurance-components-public/heath-insurance-public/heath-insurance-public.component';
 import { AutoInsurancePublicComponent } from './pages/insurance-components-public/auto-insurance-public/auto-insurance-public.component';
 import { LifeInsurancePublicComponent } from './pages/insurance-components-public/life-insurance-public/life-insurance-public.component';
+import { MVACompensationComponent } from './pages/insurance-Components/mva-compensation/mva-compensation.component';
+import { MVACompensationPublicComponent } from './pages/insurance-components-public/mva-compensation-public/mva-compensation-public.component';
 
 const routes: Routes = [
 	{
@@ -78,6 +80,11 @@ const routes: Routes = [
 		component:LifeInsuranceComponent
 	},
 	{
+		path:'mva-compensation',
+		canActivate: [AuthGuard],
+		component:MVACompensationComponent
+	},
+	{
 		path:'affordable-medicare-public',
 		component:AffordableMedicarePlansPublicComponent
 	},
@@ -92,6 +99,10 @@ const routes: Routes = [
 	{
 		path:'life-insurance-public',
 		component:LifeInsurancePublicComponent
+	},
+	{
+		path:'mva-compensation-public',
+		component:MVACompensationPublicComponent
 	},
 	{
 		path: '**',

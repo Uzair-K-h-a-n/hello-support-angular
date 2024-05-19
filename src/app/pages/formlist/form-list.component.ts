@@ -11,7 +11,8 @@ export class FormsComponent implements OnInit {
   templates=[{name:"Medicare Plans",link:"/affordable-medicare",formName:"affordable-medicare"},
   {name:"Auto Insurance",link:`/auto-insurance`,formName:"auto-insurance"},
   {name:"Health Insurance",link:`/health-insurance`,formName:"health-insurance"},
-  {name:"Life Insurance",link:`/life-insurance`,formName:"life-insurance"}]
+  {name:"Life Insurance",link:`/life-insurance`,formName:"life-insurance"},
+  {name:"MVA Compensation",link:`/mva-compensation`,formName:"mva-compensation"}]
 
   columns = [];
   actions = [];

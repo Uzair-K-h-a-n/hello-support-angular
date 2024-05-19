@@ -18,7 +18,9 @@ export class AddEditUserComponent implements OnInit {
     {label:"Affordable Medicare Plans",value:"affordable-medicare"},
     {label:"Auto Insurance",value:"auto-insurance"},
     {label:"Health Insurance",value:"health-insurance"},
-    {label:"Life Insurance",value:"life-insurance"}]
+    {label:"Life Insurance",value:"life-insurance"},
+    {label:"MVA Compensation",value:"mva-compensation"},
+  ]
 
   constructor(
     private activeModal: NgbActiveModal,
