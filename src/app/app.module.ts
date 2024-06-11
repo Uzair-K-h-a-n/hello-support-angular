@@ -40,6 +40,7 @@ import { AutoInsurancePublicComponent } from './pages/insurance-components-publi
 import { HeathInsurancePublicComponent } from './pages/insurance-components-public/heath-insurance-public/heath-insurance-public.component';
 import { MVACompensationComponent } from './pages/insurance-Components/mva-compensation/mva-compensation.component';
 import { MVACompensationPublicComponent } from './pages/insurance-components-public/mva-compensation-public/mva-compensation-public.component';
+import { CrmDataSubmitComponent } from './pages/insurance-components-public/crm-data-submit/crm-data-submit.component';
 @NgModule({
 	imports: [
 		BrowserAnimationsModule,
@@ -85,6 +86,7 @@ import { MVACompensationPublicComponent } from './pages/insurance-components-pub
 		HeathInsurancePublicComponent,
 		MVACompensationComponent,
 		MVACompensationPublicComponent,
+		CrmDataSubmitComponent,
 	],
 	providers: [
 		{

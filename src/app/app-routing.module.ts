@@ -20,6 +20,7 @@ import { AutoInsurancePublicComponent } from './pages/insurance-components-publi
 import { LifeInsurancePublicComponent } from './pages/insurance-components-public/life-insurance-public/life-insurance-public.component';
 import { MVACompensationComponent } from './pages/insurance-Components/mva-compensation/mva-compensation.component';
 import { MVACompensationPublicComponent } from './pages/insurance-components-public/mva-compensation-public/mva-compensation-public.component';
+import { CrmDataSubmitComponent } from './pages/insurance-components-public/crm-data-submit/crm-data-submit.component';
 
 const routes: Routes = [
 	{
@@ -103,6 +104,10 @@ const routes: Routes = [
 	{
 		path:'mva-compensation-public',
 		component:MVACompensationPublicComponent
+	},
+	{
+		path:'aca-data-submit-public',
+		component:CrmDataSubmitComponent
 	},
 	{
 		path: '**',

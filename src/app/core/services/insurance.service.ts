@@ -55,4 +55,8 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance-public/mva-compensation-public`;
         return this.http.post(url, insuranceData);
     }
+    public sendDataToCrmPublic(data) {
+        const url = `https://global-digital-media.trackdrive.com/api/v1/leads`;
+        return this.http.post(url, data);
+    }
 }

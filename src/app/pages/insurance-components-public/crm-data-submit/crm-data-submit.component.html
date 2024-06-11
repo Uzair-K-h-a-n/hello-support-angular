@@ -1,0 +1,189 @@
+<div class=" header bg-danger pb-6">
+    <div class=" container-fluid">
+        <div class=" header-body">
+            <div class=" row align-items-center py-4">
+                <div class=" col-lg-12 col-12" style="text-align: center">
+                    <h6 class=" h1 text-white d-inline-block mb-0">ACA-API Form</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]="crmDataForm">
+    <div class=" card-wrapper">
+        <div class=" card">
+            <div class=" card-body">
+                <div class=" row">
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Lead token
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Lead tokene" type="text"
+                                    formControlName="lead_token" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['lead_token']?.invalid && healthInsuranceForm?.controls['lead_token']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['lead_token']?.errors?.required">
+                                    Please enter lead token
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Caller id
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Caller id" type="text"
+                                    formControlName="caller_id" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['caller_id']?.invalid && healthInsuranceForm?.controls['caller_id']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['caller_id']?.errors?.required">
+                                    Please enter caller id
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Traffic source id
+                            </label>
+                            <div class="input-group input-group-merge">
+                                <input class="form-control" placeholder="Traffic source id" type="text"
+                                    formControlName="traffic_source_id" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['traffic_source_id']?.invalid && healthInsuranceForm?.controls['traffic_source_id']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['traffic_source_id']?.errors?.required">
+                                    Please enter traffic source id
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                First Name
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="First name" type="text"
+                                    formControlName="first_name" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['first_name']?.invalid && healthInsuranceForm?.controls['first_name']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['first_name']?.errors?.required">
+                                    Please enter first name
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Last Name
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Last name" type="text"
+                                    formControlName="last_name" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['last_name']?.invalid && healthInsuranceForm?.controls['last_name']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['last_name']?.errors?.required">
+                                    Please enter last name
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                State
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="State" type="text"
+                                    formControlName="state" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['state']?.invalid && healthInsuranceForm?.controls['state']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['state']?.errors?.required">
+                                    Please enter state
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                City
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="City" type="text"
+                                    formControlName="city" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['city']?.invalid && healthInsuranceForm?.controls['city']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['city']?.errors?.required">
+                                    Please enter city
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                ZIP code
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="zip" type="text"
+                                    formControlName="zip" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['zip']?.invalid && healthInsuranceForm?.controls['zip']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['zip']?.errors?.required">
+                                    Please enter zip code
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Trusted form cert url
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Trusted form cert url" type="text"
+                                    formControlName="trusted_form_cert_url" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['trusted_form_cert_url']?.invalid && healthInsuranceForm?.controls['trusted_form_cert_url']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['trusted_form_cert_url']?.errors?.required">
+                                    Please enter trusted form cert url
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Jornaya Lead Id
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Jornaya lead id" type="text"
+                                    formControlName="jornaya_leadid" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['jornaya_leadid']?.invalid && healthInsuranceForm?.controls['jornaya_leadid']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['jornaya_leadid']?.errors?.required">
+                                    Please enter jornaya lead id
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right">
+                     <button type="submit" class="btn btn-primary" (click)="addData()" [disabled]="loader"><span *ngIf="loader" class="spinnerLoader loader" role="status" aria-hidden="true"></span> 
+                      <span *ngIf="!loader">
+                        Submit
+                      </span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</form>
