@@ -41,6 +41,8 @@ import { HeathInsurancePublicComponent } from './pages/insurance-components-publ
 import { MVACompensationComponent } from './pages/insurance-Components/mva-compensation/mva-compensation.component';
 import { MVACompensationPublicComponent } from './pages/insurance-components-public/mva-compensation-public/mva-compensation-public.component';
 import { CrmDataSubmitComponent } from './pages/insurance-components-public/crm-data-submit/crm-data-submit.component';
+import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/blind-transfer-ping.component';
+
 @NgModule({
 	imports: [
 		BrowserAnimationsModule,
@@ -87,6 +89,7 @@ import { CrmDataSubmitComponent } from './pages/insurance-components-public/crm-
 		MVACompensationComponent,
 		MVACompensationPublicComponent,
 		CrmDataSubmitComponent,
+		BlindTransferPingComponent,
 	],
 	providers: [
 		{

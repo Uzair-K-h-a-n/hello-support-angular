@@ -56,6 +56,7 @@ export class InsuranceService {
         return this.http.post(url, insuranceData);
     }
     public sendDataToCrmPublic(data) {
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Basic dXNlcjpwYXNz' });
         const url = `https://global-digital-media.trackdrive.com/api/v1/leads`;
         return this.http.post(url, data);
     }

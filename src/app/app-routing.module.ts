@@ -21,7 +21,8 @@ import { LifeInsurancePublicComponent } from './pages/insurance-components-publi
 import { MVACompensationComponent } from './pages/insurance-Components/mva-compensation/mva-compensation.component';
 import { MVACompensationPublicComponent } from './pages/insurance-components-public/mva-compensation-public/mva-compensation-public.component';
 import { CrmDataSubmitComponent } from './pages/insurance-components-public/crm-data-submit/crm-data-submit.component';
-
+import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/blind-transfer-ping.component';
+BlindTransferPingComponent
 const routes: Routes = [
 	{
 		path: '',
@@ -108,6 +109,11 @@ const routes: Routes = [
 	{
 		path:'aca-data-submit-public',
 		component:CrmDataSubmitComponent
+	},
+	{
+		path:'blind-transfer-ping',
+		component:BlindTransferPingComponent
+
 	},
 	{
 		path: '**',
