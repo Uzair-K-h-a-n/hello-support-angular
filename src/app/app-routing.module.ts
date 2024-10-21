@@ -111,7 +111,7 @@ const routes: Routes = [
 		component:CrmDataSubmitComponent
 	},
 	{
-		path:'blind-transfer-ping',
+		path:'ACA-transfer-TDMT8-ping',
 		component:BlindTransferPingComponent
 
 	},
