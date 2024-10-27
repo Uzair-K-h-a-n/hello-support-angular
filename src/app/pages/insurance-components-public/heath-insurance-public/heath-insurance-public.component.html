@@ -66,6 +66,22 @@
                     <div class=" col-md-6">
                         <div class=" form-group">
                             <label class=" form-control-label">
+                                DOB
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Your dob" type="text"
+                                    formControlName="dob" />
+                            </div>
+                            <span *ngIf="healthInsuranceForm?.controls['dob']?.invalid && healthInsuranceForm?.controls['dob']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="healthInsuranceForm?.controls['dob']?.errors?.required">
+                                    Please enter DOB
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
                                 Phone
                             </label>
                             <div class=" input-group input-group-merge">

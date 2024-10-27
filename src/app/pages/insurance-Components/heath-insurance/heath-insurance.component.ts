@@ -33,6 +33,7 @@ export class HeathInsuranceComponent implements OnInit {
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
       age:['',Validators.required],
+      dob:['',Validators.required],
       phone: ['', Validators.compose([ Validators.required, Validators.pattern(/^[0-9+*/-]*$/)])],
       zipCode: ['', Validators.compose([ Validators.required, Validators.pattern(/^[0-9+*/-]*$/)])],
       state: ['', Validators.required],
