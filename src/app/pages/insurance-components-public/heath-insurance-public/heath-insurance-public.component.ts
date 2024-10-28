@@ -55,14 +55,16 @@ export class HeathInsurancePublicComponent implements OnInit {
         this.healthInsuranceForm.reset();
         this.loader=false;
         this.toastr.success("Form successfully submitted", 'Success', {
-          timeOut: 2000, // Display duration in milliseconds
+          closeButton: true,
+          disableTimeOut: true
         });
       },
           (err) => {
         console.log(err)
         this.loader = false;
         this.toastr.error(err.error.Message, "Error", {
-          timeOut: 2000, // Display duration in milliseconds
+          closeButton: true,
+          disableTimeOut: true
         });
       }
     );

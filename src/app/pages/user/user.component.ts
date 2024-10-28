@@ -93,7 +93,8 @@ export class UserComponent implements OnInit {
   }
   showSnackBar(message){
     this.toastr.success(message, 'Success', {
-      timeOut: 2000, // Display duration in milliseconds
+      closeButton: true,
+      disableTimeOut: true
     });
 }
 }

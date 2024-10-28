@@ -52,9 +52,12 @@ import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/bl
 		RouterModule,
 		BsDropdownModule.forRoot(),
 		AppRoutingModule,
-		ToastrModule.forRoot( {positionClass: 'toast-top-center', enableHtml: true, // Enable HTML for the toast message
-		preventDuplicates: true, // Prevent duplicate toasts
-		closeButton: false, toastClass: 'ngx-toastr-custom-class'}),
+		ToastrModule.forRoot({
+			positionClass: 'toast-top-center', 
+			enableHtml: true, // Enable HTML for the toast message
+			preventDuplicates: true, // Prevent duplicate toasts
+			closeButton: true
+		}),
 		CollapseModule.forRoot(),
 		TagInputModule,
 		LandingLayoutModule,
