@@ -4,12 +4,12 @@ import { FormService } from "../../../core/services/forms.service";
 import { ToastrService } from "ngx-toastr";
 
 @Component({
-  selector: 'app-blind-transfer-ping',
-  templateUrl: './blind-transfer-ping.component.html',
+  selector: 'p6-med-trb-rev',
+  templateUrl: './p6-med-trb-rev.component.html',
 })
-export class BlindTransferPingComponent implements OnInit {
+export class P6MedTrbRevComponent implements OnInit {
 
-  blindTransferPingForm: FormGroup;
+  p6MedTrbRevForm: FormGroup;
   focus = false;
   loader=false;
   responseMessage;
@@ -26,22 +26,21 @@ export class BlindTransferPingComponent implements OnInit {
   }
 
   createForm() {
-    this.blindTransferPingForm = this.formBuilder.group({
+    this.p6MedTrbRevForm = this.formBuilder.group({
       phoneNumber: ['', Validators.required],
-      state: ['', Validators.required],
       zip: ['', Validators.required],
     });
   }
 
   submitForm() {
-    this.blindTransferPingForm.markAllAsTouched();
-    if(!this.blindTransferPingForm.valid){
+    this.p6MedTrbRevForm.markAllAsTouched();
+    if(!this.p6MedTrbRevForm.valid){
       return
     }
     this.loader=true;
-    this.formService.blindTransferPingForm(this.blindTransferPingForm.value).subscribe(
+    this.formService.p6MedTrbRevForm(this.p6MedTrbRevForm.value).subscribe(
       (res:any) => {
-        this.blindTransferPingForm.reset();
+        this.p6MedTrbRevForm.reset();
         this.loader=false;
         this.responseMessage = res.message;
         this.showAlert = true;

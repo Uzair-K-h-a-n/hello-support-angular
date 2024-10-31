@@ -14,8 +14,13 @@ export class FormService {
         private http: HttpClient,
     ) { }
 
-    public blindTransferPingForm(number) {
+    public blindTransferPingForm(data) {
         const url = this.apiPath + `/forms/blind-transfer-ping`;
-        return this.http.post(url, number);
+        return this.http.post(url, data);
+    }
+
+    public p6MedTrbRevForm(data) {
+        const url = this.apiPath + `/forms/p6_med_trb_rev`;
+        return this.http.post(url, data);
     }
 }
