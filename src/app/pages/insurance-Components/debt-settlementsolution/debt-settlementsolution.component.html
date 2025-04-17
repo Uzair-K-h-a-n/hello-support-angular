@@ -54,7 +54,7 @@
                                 Credit Card Debt
                             </label>
                             <div class=" input-group input-group-merge">
-                                <input class=" form-control" placeholder="Your debt" type="number"
+                                <input class=" form-control" placeholder="Your debt (e.g $1000)" type="text" 
                                     formControlName="debt" />
                             </div>
                             <span *ngIf=" debtSettlementSolutionForm?.controls['debt']?.invalid &&  debtSettlementSolutionForm?.controls['debt']?.touched" class="validation-error-message text-danger ">
