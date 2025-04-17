@@ -43,6 +43,8 @@ import { MVACompensationPublicComponent } from './pages/insurance-components-pub
 import { CrmDataSubmitComponent } from './pages/insurance-components-public/crm-data-submit/crm-data-submit.component';
 import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/blind-transfer-ping.component';
 import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-rev.component';
+import { DebtSettlementSolutionComponent } from './pages/insurance-Components/debt-settlementsolution/debt-settlementsolution.component';
+import { DebtSettlementSolutionPublicComponent } from './pages/insurance-components-public/debt-settlementsolution-public/debt-settlementsolution-public.component';
 
 @NgModule({
 	imports: [
@@ -95,6 +97,8 @@ import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-re
 		CrmDataSubmitComponent,
 		BlindTransferPingComponent,
 		P6MedTrbRevComponent,
+		DebtSettlementSolutionComponent,
+		DebtSettlementSolutionPublicComponent
 	],
 	providers: [
 		{

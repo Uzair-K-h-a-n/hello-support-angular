@@ -23,6 +23,11 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance/affordable-medicare-plans`;
         return this.http.post(url, insuranceData);
     }
+
+    public addDebtSettlementSolution(debtData) {
+        const url = this.apiPath + `/insurance/debt-settlementsolution`;
+        return this.http.post(url, debtData);
+    }
     public addHealthInsurance(insuranceData) {
         const url = this.apiPath + `/insurance/health-insurance`;
         return this.http.post(url, insuranceData);
@@ -54,6 +59,10 @@ export class InsuranceService {
     public addMVACompensationPublic(insuranceData) {
         const url = this.apiPath + `/insurance-public/mva-compensation-public`;
         return this.http.post(url, insuranceData);
+    }
+    public addDebtSettlementSolutionPublic(debtData) {
+        const url = this.apiPath + `/insurance-public/debt-settlementsolution-public`;
+        return this.http.post(url, debtData);
     }
     public sendDataToCrmPublic(data) {
         const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Basic dXNlcjpwYXNz' });

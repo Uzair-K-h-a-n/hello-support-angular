@@ -1,0 +1,155 @@
+<div class=" header bg-danger pb-6">
+    <div class=" container-fluid">
+        <div class=" header-body">
+            <div class=" row align-items-center py-4">
+                <div class=" col-lg-12 col-12" style="text-align: center">
+                    <h6 class=" h1 text-white d-inline-block mb-0">Debt Settlement Solution Form</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]=" debtSettlementSolutionForm">
+    <div class=" card-wrapper">
+        <div class=" card">
+            <div class=" card-body">
+                <div class=" row">
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                First Name
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="First name" type="text"
+                                    formControlName="first_name" />
+                            </div>
+                            <span *ngIf=" debtSettlementSolutionForm?.controls['first_name']?.invalid &&  debtSettlementSolutionForm?.controls['first_name']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf=" debtSettlementSolutionForm?.controls['first_name']?.errors?.required">
+                                    Please enter first name
+                                </span>
+                            </span>
+                        </div>
+                        
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Last Name
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Last name" type="text"
+                                    formControlName="last_name" />
+                            </div>
+                            <span *ngIf=" debtSettlementSolutionForm?.controls['last_name']?.invalid &&  debtSettlementSolutionForm?.controls['last_name']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf=" debtSettlementSolutionForm?.controls['last_name']?.errors?.required">
+                                    Please enter last name
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Credit Card Debt
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Your debt" type="number"
+                                    formControlName="debt" />
+                            </div>
+                            <span *ngIf=" debtSettlementSolutionForm?.controls['debt']?.invalid &&  debtSettlementSolutionForm?.controls['debt']?.touched" class="validation-error-message text-danger ">
+                              <span *ngIf=" debtSettlementSolutionForm?.controls['debt']?.errors?.required">
+                                  Please enter Credit card Debt
+                              </span>
+                              <span *ngIf="( debtSettlementSolutionForm?.controls['debt']?.errors) && ! debtSettlementSolutionForm?.controls['debt']?.errors?.required">
+                                  Please enter valid debt
+                              </span>
+                          </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Phone
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Phone" type="text"
+                                    formControlName="phone" />
+                            </div>
+                            <span *ngIf=" debtSettlementSolutionForm?.controls['phone']?.invalid &&  debtSettlementSolutionForm?.controls['phone']?.touched" class="validation-error-message text-danger ">
+                                <span *ngIf=" debtSettlementSolutionForm?.controls['phone']?.errors?.required">
+                                    Please enter phone number
+                                </span>
+                                <span *ngIf="( debtSettlementSolutionForm?.controls['phone']?.errors) && ! debtSettlementSolutionForm?.controls['phone']?.errors?.required">
+                                    Please enter valid phone number
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                State
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="State" type="text"
+                                    formControlName="state" />
+                            </div>
+                            <span *ngIf=" debtSettlementSolutionForm?.controls['state']?.invalid &&  debtSettlementSolutionForm?.controls['state']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf=" debtSettlementSolutionForm?.controls['state']?.errors?.required">
+                                    Please enter state
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Zip Code
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Zip Code" type="text"
+                                    formControlName="zipCode" />
+                            </div>
+                               <span *ngIf=" debtSettlementSolutionForm?.controls['zipCode']?.invalid &&  debtSettlementSolutionForm?.controls['zipCode']?.touched" class="validation-error-message text-danger ">
+                                <span *ngIf=" debtSettlementSolutionForm?.controls['zipCode']?.errors?.required">
+                                    Please enter zipCode 
+                                </span>
+                                <span *ngIf="( debtSettlementSolutionForm?.controls['zipCode']?.errors) && ! debtSettlementSolutionForm?.controls['zipCode']?.errors?.required">
+                                    Please enter valid zipCode
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Call Time
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <select class="form-control" aria-invalid="false" formControlName="callTime" name="call">
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                </select>
+                            </div>
+                            <span *ngIf=" debtSettlementSolutionForm?.controls['callTime']?.invalid &&  debtSettlementSolutionForm?.controls['callTime']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf=" debtSettlementSolutionForm?.controls['callTime']?.errors?.required">
+                                    Please select call time
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary" (click)="addData()" [disabled]="loader"><span *ngIf="loader" class="spinnerLoader loader" role="status" aria-hidden="true"></span> 
+                      <span *ngIf="!loader">
+                        Submit
+                      </span></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</form>

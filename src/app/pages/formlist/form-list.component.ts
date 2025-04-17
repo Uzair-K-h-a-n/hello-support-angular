@@ -12,7 +12,8 @@ export class FormsComponent implements OnInit {
   {name:"Auto Insurance",link:`/auto-insurance`,formName:"auto-insurance"},
   {name:"Health Insurance",link:`/health-insurance`,formName:"health-insurance"},
   {name:"Life Insurance",link:`/life-insurance`,formName:"life-insurance"},
-  {name:"MVA Compensation",link:`/mva-compensation`,formName:"mva-compensation"}]
+  {name:"MVA Compensation",link:`/mva-compensation`,formName:"mva-compensation"},
+  {name:"Debt SettlementSolution",link:`/debt-settlementsolution`,formName:"debt-settlementsolution"}]
 
   columns = [];
   actions = [];

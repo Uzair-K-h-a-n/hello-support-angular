@@ -23,6 +23,8 @@ import { MVACompensationPublicComponent } from './pages/insurance-components-pub
 import { CrmDataSubmitComponent } from './pages/insurance-components-public/crm-data-submit/crm-data-submit.component';
 import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/blind-transfer-ping.component';
 import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-rev.component';
+import { DebtSettlementSolutionComponent } from './pages/insurance-Components/debt-settlementsolution/debt-settlementsolution.component';
+import { DebtSettlementSolutionPublicComponent } from './pages/insurance-components-public/debt-settlementsolution-public/debt-settlementsolution-public.component';
 BlindTransferPingComponent
 const routes: Routes = [
 	{
@@ -88,6 +90,11 @@ const routes: Routes = [
 		component:MVACompensationComponent
 	},
 	{
+		path:'debt-settlementsolution',
+		canActivate: [AuthGuard],
+		component:DebtSettlementSolutionComponent
+	},
+	{
 		path:'affordable-medicare-public',
 		component:AffordableMedicarePlansPublicComponent
 	},
@@ -106,6 +113,10 @@ const routes: Routes = [
 	{
 		path:'mva-compensation-public',
 		component:MVACompensationPublicComponent
+	},
+	{
+		path:'debt-settlementsolution-public',
+		component:DebtSettlementSolutionPublicComponent
 	},
 	{
 		path:'aca-data-submit-public',
