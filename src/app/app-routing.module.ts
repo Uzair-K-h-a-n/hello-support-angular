@@ -25,6 +25,7 @@ import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/bl
 import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-rev.component';
 import { DebtSettlementSolutionComponent } from './pages/insurance-Components/debt-settlementsolution/debt-settlementsolution.component';
 import { DebtSettlementSolutionPublicComponent } from './pages/insurance-components-public/debt-settlementsolution-public/debt-settlementsolution-public.component';
+import { ACACPLAgentAvailabilityCheckComponent } from './pages/insurance-components-public/aca_cpl_agent_availability_check/aca_cpl_agent_availability_check.component';
 BlindTransferPingComponent
 const routes: Routes = [
 	{
@@ -105,6 +106,10 @@ const routes: Routes = [
 	{
 		path:'auto-insurance-public',
 		component:AutoInsurancePublicComponent
+	},
+	{
+		path:'aca_cpl_agent_availability_check',
+		component: ACACPLAgentAvailabilityCheckComponent
 	},
 	{
 		path:'life-insurance-public',

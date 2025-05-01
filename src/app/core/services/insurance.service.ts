@@ -69,4 +69,9 @@ export class InsuranceService {
         const url = `https://global-digital-media.trackdrive.com/api/v1/leads`;
         return this.http.post(url, data);
     }
+
+    public checkIfDilarIsReady(number) {
+        const url = this.apiPath + `/insurance-public/aca_cpl_agent_availability_check/${number}`;
+        return this.http.get(url);
+    }
 }

@@ -45,6 +45,7 @@ import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/bl
 import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-rev.component';
 import { DebtSettlementSolutionComponent } from './pages/insurance-Components/debt-settlementsolution/debt-settlementsolution.component';
 import { DebtSettlementSolutionPublicComponent } from './pages/insurance-components-public/debt-settlementsolution-public/debt-settlementsolution-public.component';
+import { ACACPLAgentAvailabilityCheckComponent } from './pages/insurance-components-public/aca_cpl_agent_availability_check/aca_cpl_agent_availability_check.component';
 
 @NgModule({
 	imports: [
@@ -91,6 +92,7 @@ import { DebtSettlementSolutionPublicComponent } from './pages/insurance-compone
 		AffordableMedicarePlansPublicComponent,
 		LifeInsurancePublicComponent,
 		AutoInsurancePublicComponent,
+		ACACPLAgentAvailabilityCheckComponent,
 		HeathInsurancePublicComponent,
 		MVACompensationComponent,
 		MVACompensationPublicComponent,
