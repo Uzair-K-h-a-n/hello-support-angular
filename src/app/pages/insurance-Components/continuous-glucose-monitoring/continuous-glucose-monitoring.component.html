@@ -1,0 +1,138 @@
+<div class=" header bg-danger pb-6">
+    <div class=" container-fluid">
+        <div class=" header-body">
+            <div class=" row align-items-center py-4">
+                <div class=" col-lg-12 col-12" style="text-align: center">
+                    <h6 class=" h1 text-white d-inline-block mb-0">Continuous Glucose Monitoring</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]="glucoseonitoringForm">
+    <div class=" card-wrapper">
+        <div class=" card">
+            <div class=" card-body">
+                <div class=" row">
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class="form-control-label">
+                                Customer Name
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Customer name" type="text"
+                                    formControlName="name" />
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['name']?.invalid && autoInsuranceForm?.controls['name']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="autoInsuranceForm?.controls['name']?.errors?.required">
+                                    Please enter customer name
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Age
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Your age" type="number"
+                                    formControlName="age" />
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['age']?.invalid && autoInsuranceForm?.controls['age']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="autoInsuranceForm?.controls['age']?.errors?.required">
+                                    Please enter age
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                     <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Have Diabetes
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <select class="form-control" aria-invalid="false" formControlName="haveDiabetes" name="haveDiabetes">
+                                    <option value="yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['haveDiabetes']?.invalid && autoInsuranceForm?.controls['haveDiabetes']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="autoInsuranceForm?.controls['haveDiabetes']?.errors?.required">
+                                    Please select this field
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Phone
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Phone" type="text"
+                                    formControlName="phone" />
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['phone']?.invalid && autoInsuranceForm?.controls['phone']?.touched" class="validation-error-message text-danger ">
+                                <span *ngIf="autoInsuranceForm?.controls['phone']?.errors?.required">
+                                    Please enter phone number
+                                </span>
+                                <span *ngIf="(autoInsuranceForm?.controls['phone']?.errors) && !autoInsuranceForm?.controls['phone']?.errors?.required">
+                                    Please enter valid phone number
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Zip Code
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Zip Code" type="text"
+                                    formControlName="zipCode" />
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['zipCode']?.invalid && autoInsuranceForm?.controls['zipCode']?.touched" class="validation-error-message text-danger ">
+                                <span *ngIf="autoInsuranceForm?.controls['zipCode']?.errors?.required">
+                                    Please enter zipcode 
+                                </span>
+                                <span *ngIf="(autoInsuranceForm?.controls['zipCode']?.errors) && !autoInsuranceForm?.controls['zipCode']?.errors?.required">
+                                    Please enter valid zipcode 
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                   
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Call Time
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <select class="form-control" aria-invalid="false" formControlName="callTime" name="call">
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                </select>
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['callTime']?.invalid && autoInsuranceForm?.controls['callTime']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="autoInsuranceForm?.controls['callTime']?.errors?.required">
+                                    Please select call time
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-right">
+                     <button type="submit" class="btn btn-primary" (click)="addData()" [disabled]="loader"><span *ngIf="loader" class="spinnerLoader loader" role="status" aria-hidden="true"></span> 
+                      <span *ngIf="!loader">
+                        Submit
+                      </span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</form>

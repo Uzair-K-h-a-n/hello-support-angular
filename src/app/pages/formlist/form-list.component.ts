@@ -13,6 +13,7 @@ export class FormsComponent implements OnInit {
   {name:"Health Insurance",link:`/health-insurance`,formName:"health-insurance"},
   {name:"Life Insurance",link:`/life-insurance`,formName:"life-insurance"},
   {name:"MVA Compensation",link:`/mva-compensation`,formName:"mva-compensation"},
+  {name:"Continuous Glucose Monitoring",link:`/continuous-glucose-monitoring`,formName:"continuous-glucose-monitoring"},
   {name:"Debt SettlementSolution",link:`/debt-settlementsolution`,formName:"debt-settlementsolution"}]
 
   columns = [];

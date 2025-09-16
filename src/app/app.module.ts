@@ -37,6 +37,7 @@ import { HeathInsuranceComponent } from './pages/insurance-Components/heath-insu
 import { AffordableMedicarePlansPublicComponent } from './pages/insurance-components-public/affordable-medicare-plans-public/affordable-medicare-plans-public.component';
 import { LifeInsurancePublicComponent } from './pages/insurance-components-public/life-insurance-public/life-insurance-public.component';
 import { AutoInsurancePublicComponent } from './pages/insurance-components-public/auto-insurance-public/auto-insurance-public.component';
+import { ContinuousGlucoseMonitoringPublicComponent } from './pages/insurance-components-public/continuous-glucose-monitoring-public/continuous-glucose-monitoring-public.component';
 import { HeathInsurancePublicComponent } from './pages/insurance-components-public/heath-insurance-public/heath-insurance-public.component';
 import { MVACompensationComponent } from './pages/insurance-Components/mva-compensation/mva-compensation.component';
 import { MVACompensationPublicComponent } from './pages/insurance-components-public/mva-compensation-public/mva-compensation-public.component';
@@ -46,6 +47,7 @@ import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-re
 import { DebtSettlementSolutionComponent } from './pages/insurance-Components/debt-settlementsolution/debt-settlementsolution.component';
 import { DebtSettlementSolutionPublicComponent } from './pages/insurance-components-public/debt-settlementsolution-public/debt-settlementsolution-public.component';
 import { ACACPLAgentAvailabilityCheckComponent } from './pages/insurance-components-public/aca_cpl_agent_availability_check/aca_cpl_agent_availability_check.component';
+import { ContinuousGlucoseMonitoringComponent } from './pages/insurance-Components/continuous-glucose-monitoring/continuous-glucose-monitoring.component';
 
 @NgModule({
 	imports: [
@@ -88,10 +90,12 @@ import { ACACPLAgentAvailabilityCheckComponent } from './pages/insurance-compone
 		AffordableMedicarePlansComponent,
 		LifeInsuranceComponent,
 		AutoInsuranceComponent,
+		ContinuousGlucoseMonitoringComponent,
 		HeathInsuranceComponent,
 		AffordableMedicarePlansPublicComponent,
 		LifeInsurancePublicComponent,
 		AutoInsurancePublicComponent,
+		ContinuousGlucoseMonitoringPublicComponent,
 		ACACPLAgentAvailabilityCheckComponent,
 		HeathInsurancePublicComponent,
 		MVACompensationComponent,

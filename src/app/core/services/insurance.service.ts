@@ -19,6 +19,12 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance/auto-insurance`;
         return this.http.post(url, insuranceData);
     }
+     
+    public addContinuousGlucoseMonitoringForm(insuranceData) {
+        const url = this.apiPath + `/insurance/continuous-glucose-monitoring`;
+        return this.http.post(url, insuranceData);
+    }
+    
     public addAffordableMedicare(insuranceData) {
         const url = this.apiPath + `/insurance/affordable-medicare-plans`;
         return this.http.post(url, insuranceData);
@@ -63,6 +69,10 @@ export class InsuranceService {
     public addDebtSettlementSolutionPublic(debtData) {
         const url = this.apiPath + `/insurance-public/debt-settlementsolution-public`;
         return this.http.post(url, debtData);
+    }
+    public addContinuousGlucoseMonitoringPublic(insuranceData) {
+        const url = this.apiPath + `/insurance/continuous-glucose-monitoring-public`;
+        return this.http.post(url, insuranceData);
     }
     public sendDataToCrmPublic(data) {
         const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Basic dXNlcjpwYXNz' });

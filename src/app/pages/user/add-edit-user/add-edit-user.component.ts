@@ -20,6 +20,8 @@ export class AddEditUserComponent implements OnInit {
     {label:"Health Insurance",value:"health-insurance"},
     {label:"Life Insurance",value:"life-insurance"},
     {label:"MVA Compensation",value:"mva-compensation"},
+    {label:"Debt Settlement Solution",value:"debt-settlementsolution"},
+    {label:"Continuous Glucose Monitoring",value:"continuous-glucose-monitoring"},
   ]
 
   constructor(
@@ -52,13 +54,11 @@ export class AddEditUserComponent implements OnInit {
       });
       this.forms.push(control);
     });
-    debugger
     if (this.user) {
       let userObj=this.user;
       delete userObj.password
       this.userForm.patchValue({...userObj});
       const formArray = this.userForm.get('pages') as FormArray;
-      debugger
       this.user.pages.forEach((patch, index) => {
         if (formArray.at(index)) {
           formArray.at(index).patchValue({"item":patch,"checkbox":true});
@@ -82,7 +82,6 @@ export class AddEditUserComponent implements OnInit {
     }
     this.loader=true;
     console.log((this.userForm.get('pages').value));
-    debugger
     let pages=[];
     (this.userForm.get('pages').value).forEach((page=>{
       if(page.checkbox){
