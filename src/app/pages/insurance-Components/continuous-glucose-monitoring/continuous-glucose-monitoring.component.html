@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]="glucoseonitoringForm">
+<form class=" container-fluid mt--6 pb-3 form-padding" [formGroup]="glucoseMonitoringForm">
     <div class=" card-wrapper">
         <div class=" card">
             <div class=" card-body">
@@ -24,8 +24,8 @@
                                 <input class=" form-control" placeholder="Customer name" type="text"
                                     formControlName="name" />
                             </div>
-                            <span *ngIf="autoInsuranceForm?.controls['name']?.invalid && autoInsuranceForm?.controls['name']?.touched" class="validation-error-message text-danger">
-                                <span *ngIf="autoInsuranceForm?.controls['name']?.errors?.required">
+                            <span *ngIf="glucoseMonitoringForm?.controls['name']?.invalid && glucoseMonitoringForm?.controls['name']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="glucoseMonitoringForm?.controls['name']?.errors?.required">
                                     Please enter customer name
                                 </span>
                             </span>
@@ -40,8 +40,8 @@
                                 <input class=" form-control" placeholder="Your age" type="number"
                                     formControlName="age" />
                             </div>
-                            <span *ngIf="autoInsuranceForm?.controls['age']?.invalid && autoInsuranceForm?.controls['age']?.touched" class="validation-error-message text-danger">
-                                <span *ngIf="autoInsuranceForm?.controls['age']?.errors?.required">
+                            <span *ngIf="glucoseMonitoringForm?.controls['age']?.invalid && glucoseMonitoringForm?.controls['age']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="glucoseMonitoringForm?.controls['age']?.errors?.required">
                                     Please enter age
                                 </span>
                             </span>
@@ -58,8 +58,8 @@
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                            <span *ngIf="autoInsuranceForm?.controls['haveDiabetes']?.invalid && autoInsuranceForm?.controls['haveDiabetes']?.touched" class="validation-error-message text-danger">
-                                <span *ngIf="autoInsuranceForm?.controls['haveDiabetes']?.errors?.required">
+                            <span *ngIf="glucoseMonitoringForm?.controls['haveDiabetes']?.invalid && glucoseMonitoringForm?.controls['haveDiabetes']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="glucoseMonitoringForm?.controls['haveDiabetes']?.errors?.required">
                                     Please select this field
                                 </span>
                             </span>
@@ -74,11 +74,11 @@
                                 <input class=" form-control" placeholder="Phone" type="text"
                                     formControlName="phone" />
                             </div>
-                            <span *ngIf="autoInsuranceForm?.controls['phone']?.invalid && autoInsuranceForm?.controls['phone']?.touched" class="validation-error-message text-danger ">
-                                <span *ngIf="autoInsuranceForm?.controls['phone']?.errors?.required">
+                            <span *ngIf="glucoseMonitoringForm?.controls['phone']?.invalid && glucoseMonitoringForm?.controls['phone']?.touched" class="validation-error-message text-danger ">
+                                <span *ngIf="glucoseMonitoringForm?.controls['phone']?.errors?.required">
                                     Please enter phone number
                                 </span>
-                                <span *ngIf="(autoInsuranceForm?.controls['phone']?.errors) && !autoInsuranceForm?.controls['phone']?.errors?.required">
+                                <span *ngIf="(glucoseMonitoringForm?.controls['phone']?.errors) && !glucoseMonitoringForm?.controls['phone']?.errors?.required">
                                     Please enter valid phone number
                                 </span>
                             </span>
@@ -93,11 +93,11 @@
                                 <input class=" form-control" placeholder="Zip Code" type="text"
                                     formControlName="zipCode" />
                             </div>
-                            <span *ngIf="autoInsuranceForm?.controls['zipCode']?.invalid && autoInsuranceForm?.controls['zipCode']?.touched" class="validation-error-message text-danger ">
-                                <span *ngIf="autoInsuranceForm?.controls['zipCode']?.errors?.required">
+                            <span *ngIf="glucoseMonitoringForm?.controls['zipCode']?.invalid && glucoseMonitoringForm?.controls['zipCode']?.touched" class="validation-error-message text-danger ">
+                                <span *ngIf="glucoseMonitoringForm?.controls['zipCode']?.errors?.required">
                                     Please enter zipcode 
                                 </span>
-                                <span *ngIf="(autoInsuranceForm?.controls['zipCode']?.errors) && !autoInsuranceForm?.controls['zipCode']?.errors?.required">
+                                <span *ngIf="(glucoseMonitoringForm?.controls['zipCode']?.errors) && !glucoseMonitoringForm?.controls['zipCode']?.errors?.required">
                                     Please enter valid zipcode 
                                 </span>
                             </span>
@@ -116,8 +116,8 @@
                                     <option value="Evening">Evening</option>
                                 </select>
                             </div>
-                            <span *ngIf="autoInsuranceForm?.controls['callTime']?.invalid && autoInsuranceForm?.controls['callTime']?.touched" class="validation-error-message text-danger">
-                                <span *ngIf="autoInsuranceForm?.controls['callTime']?.errors?.required">
+                            <span *ngIf="glucoseMonitoringForm?.controls['callTime']?.invalid && glucoseMonitoringForm?.controls['callTime']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="glucoseMonitoringForm?.controls['callTime']?.errors?.required">
                                     Please select call time
                                 </span>
                             </span>

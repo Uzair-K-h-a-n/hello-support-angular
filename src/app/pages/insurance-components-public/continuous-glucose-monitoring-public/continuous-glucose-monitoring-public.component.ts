@@ -10,7 +10,7 @@ import { ToastrService } from "ngx-toastr";
 })
 export class ContinuousGlucoseMonitoringPublicComponent implements OnInit {
 
-  glucoseonitoringForm: FormGroup;
+  glucoseMonitoringForm: FormGroup;
   focus = false;
   loader=false;
   constructor(
@@ -26,7 +26,7 @@ export class ContinuousGlucoseMonitoringPublicComponent implements OnInit {
   }
 
   createForm() {
-    this.glucoseonitoringForm = this.formBuilder.group({
+    this.glucoseMonitoringForm = this.formBuilder.group({
       name: ['', Validators.required],
       age:['',Validators.required],
       haveDiabetes:['',Validators.required],
@@ -37,14 +37,14 @@ export class ContinuousGlucoseMonitoringPublicComponent implements OnInit {
   }
 
   addData() {
-    this.glucoseonitoringForm.markAllAsTouched();
-    if(!this.glucoseonitoringForm.valid){
+    this.glucoseMonitoringForm.markAllAsTouched();
+    if(!this.glucoseMonitoringForm.valid){
       return
     }
     this.loader=true;
-    this.productService.addContinuousGlucoseMonitoringForm(this.glucoseonitoringForm.value).subscribe(
+    this.productService.addContinuousGlucoseMonitoringForm(this.glucoseMonitoringForm.value).subscribe(
       (res) => {
-        this.glucoseonitoringForm.reset();
+        this.glucoseMonitoringForm.reset();
         this.loader=false;
         this.toastr.success("Form successfully submitted", 'Success', {
           closeButton: true,
