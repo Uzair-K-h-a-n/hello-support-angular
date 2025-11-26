@@ -19,6 +19,12 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance/auto-insurance`;
         return this.http.post(url, insuranceData);
     }
+     
+    public addContinuousGlucoseMonitoringForm(insuranceData) {
+        const url = this.apiPath + `/insurance/continuous-glucose-monitoring`;
+        return this.http.post(url, insuranceData);
+    }
+    
     public addAffordableMedicare(insuranceData) {
         const url = this.apiPath + `/insurance/affordable-medicare-plans`;
         return this.http.post(url, insuranceData);
@@ -72,9 +78,18 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance-public/medicare-cms-public`;
         return this.http.post(url, medicareCmsData);
     }
+    public addContinuousGlucoseMonitoringPublic(insuranceData) {
+        const url = this.apiPath + `/insurance/continuous-glucose-monitoring-public`;
+        return this.http.post(url, insuranceData);
+    }
     public sendDataToCrmPublic(data) {
         const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Basic dXNlcjpwYXNz' });
         const url = `https://global-digital-media.trackdrive.com/api/v1/leads`;
         return this.http.post(url, data);
+    }
+
+    public checkIfDilarIsReady(number) {
+        const url = this.apiPath + `/insurance-public/aca_cpl_agent_availability_check/${number}`;
+        return this.http.get(url);
     }
 }

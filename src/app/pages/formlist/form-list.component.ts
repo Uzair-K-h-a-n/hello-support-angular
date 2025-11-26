@@ -15,7 +15,9 @@ export class FormsComponent implements OnInit {
   {name:"Life Insurance",link:`/life-insurance`,formName:"life-insurance"},
   {name:"MVA Compensation",link:`/mva-compensation`,formName:"mva-compensation"},
   {name:"Debt SettlementSolution",link:`/debt-settlementsolution`,formName:"debt-settlementsolution"},
-  {name:"Medicare CMS",link:`/medicare-cms`,formName:"medicare-cms"}]
+  {name:"Medicare CMS",link:`/medicare-cms`,formName:"medicare-cms"},
+  {name:"Continuous Glucose Monitoring",link:`/continuous-glucose-monitoring`,formName:"continuous-glucose-monitoring"},
+  {name:"Debt SettlementSolution",link:`/debt-settlementsolution`,formName:"debt-settlementsolution"}]
 
   columns = [];
   actions = [];

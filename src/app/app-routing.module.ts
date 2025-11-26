@@ -17,6 +17,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { AffordableMedicarePlansPublicComponent } from './pages/insurance-components-public/affordable-medicare-plans-public/affordable-medicare-plans-public.component';
 import { HeathInsurancePublicComponent } from './pages/insurance-components-public/heath-insurance-public/heath-insurance-public.component';
 import { AutoInsurancePublicComponent } from './pages/insurance-components-public/auto-insurance-public/auto-insurance-public.component';
+import { ContinuousGlucoseMonitoringPublicComponent } from './pages/insurance-components-public/continuous-glucose-monitoring-public/continuous-glucose-monitoring-public.component';
 import { LifeInsurancePublicComponent } from './pages/insurance-components-public/life-insurance-public/life-insurance-public.component';
 import { MVACompensationComponent } from './pages/insurance-Components/mva-compensation/mva-compensation.component';
 import { MVACompensationPublicComponent } from './pages/insurance-components-public/mva-compensation-public/mva-compensation-public.component';
@@ -24,9 +25,11 @@ import { CrmDataSubmitComponent } from './pages/insurance-components-public/crm-
 import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/blind-transfer-ping.component';
 import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-rev.component';
 import { DebtSettlementSolutionComponent } from './pages/insurance-Components/debt-settlementsolution/debt-settlementsolution.component';
+import { ContinuousGlucoseMonitoringComponent } from './pages/insurance-Components/continuous-glucose-monitoring/continuous-glucose-monitoring.component';
 import { DebtSettlementSolutionPublicComponent } from './pages/insurance-components-public/debt-settlementsolution-public/debt-settlementsolution-public.component';
 import { MedicareCmsComponent } from './pages/insurance-Components/medicare-cms/medicare-cms.component';
 import { MedicareCmsPublicComponent } from './pages/insurance-components-public/medicare-cms-public/medicare-cms-public.component';
+import { ACACPLAgentAvailabilityCheckComponent } from './pages/insurance-components-public/aca_cpl_agent_availability_check/aca_cpl_agent_availability_check.component';
 BlindTransferPingComponent
 const routes: Routes = [
 	{
@@ -82,6 +85,11 @@ const routes: Routes = [
 		component:AutoInsuranceComponent
 	},
 	{
+		path:'continuous-glucose-monitoring',
+		canActivate: [AuthGuard],
+		component:ContinuousGlucoseMonitoringComponent
+	},
+	{
 		path:'life-insurance',
 		canActivate: [AuthGuard],
 		component:LifeInsuranceComponent
@@ -112,6 +120,14 @@ const routes: Routes = [
 	{
 		path:'auto-insurance-public',
 		component:AutoInsurancePublicComponent
+	},
+	{
+		path:'continuous-glucose-monitoring-public',
+		component:ContinuousGlucoseMonitoringPublicComponent
+	},
+	{
+		path:'aca_cpl_agent_availability_check',
+		component: ACACPLAgentAvailabilityCheckComponent
 	},
 	{
 		path:'life-insurance-public',
