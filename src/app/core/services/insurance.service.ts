@@ -64,6 +64,14 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance-public/debt-settlementsolution-public`;
         return this.http.post(url, debtData);
     }
+    public addMedicareCms(medicareCmsData) {
+        const url = this.apiPath + `/insurance/medicare-cms`;
+        return this.http.post(url, medicareCmsData);
+    }
+    public addMedicareCmsPublic(medicareCmsData) {
+        const url = this.apiPath + `/insurance-public/medicare-cms-public`;
+        return this.http.post(url, medicareCmsData);
+    }
     public sendDataToCrmPublic(data) {
         const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Basic dXNlcjpwYXNz' });
         const url = `https://global-digital-media.trackdrive.com/api/v1/leads`;

@@ -8,12 +8,14 @@ import {AuthService} from "../../core/services/auth.service"
 })
 export class FormsComponent implements OnInit {
   rows = [];
-  templates=[{name:"Medicare Plans",link:"/affordable-medicare",formName:"affordable-medicare"},
+  templates=[
+  {name:"Medicare Plans",link:"/affordable-medicare",formName:"affordable-medicare"},
   {name:"Auto Insurance",link:`/auto-insurance`,formName:"auto-insurance"},
   {name:"Health Insurance",link:`/health-insurance`,formName:"health-insurance"},
   {name:"Life Insurance",link:`/life-insurance`,formName:"life-insurance"},
   {name:"MVA Compensation",link:`/mva-compensation`,formName:"mva-compensation"},
-  {name:"Debt SettlementSolution",link:`/debt-settlementsolution`,formName:"debt-settlementsolution"}]
+  {name:"Debt SettlementSolution",link:`/debt-settlementsolution`,formName:"debt-settlementsolution"},
+  {name:"Medicare CMS",link:`/medicare-cms`,formName:"medicare-cms"}]
 
   columns = [];
   actions = [];
