@@ -30,14 +30,16 @@ export class AutoInsuranceComponent implements OnInit {
     this.autoInsuranceForm = this.formBuilder.group({
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
-      age:['',Validators.required],
+      dob:['',Validators.required],
+      email:['',Validators.required],
+      city:['',Validators.required],
+      address:['',Validators.required],
       phone: ['', Validators.compose([ Validators.required, Validators.pattern(/^[0-9+*/-]*$/)])],
       zipCode: ['', Validators.compose([ Validators.required, Validators.pattern(/^[0-9+*/-]*$/)])],
       state: ['', Validators.required],
-      callTime: ['', Validators.required],
-      vehicleMakeModelYear: ['', Validators.required],
-
     });
+    // callTime: ['', Validators.required],
+    // vehicleMakeModelYear: ['', Validators.required],
   }
 
   addData() {

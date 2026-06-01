@@ -50,15 +50,63 @@
                     <div class=" col-md-6">
                         <div class=" form-group">
                             <label class=" form-control-label">
-                                Age
+                                Address
                             </label>
                             <div class=" input-group input-group-merge">
-                                <input class=" form-control" placeholder="Your age" type="number"
-                                    formControlName="age" />
+                                <input class=" form-control" placeholder="Address" type="text"
+                                    formControlName="address" />
                             </div>
-                            <span *ngIf="autoInsuranceForm?.controls['age']?.invalid && autoInsuranceForm?.controls['age']?.touched" class="validation-error-message text-danger">
-                                <span *ngIf="autoInsuranceForm?.controls['age']?.errors?.required">
-                                    Please enter age
+                            <span *ngIf="autoInsuranceForm?.controls['address']?.invalid && autoInsuranceForm?.controls['address']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="autoInsuranceForm?.controls['address']?.errors?.required">
+                                    Please enter address
+                                </span>
+                            </span>
+                        </div>
+                    </div> 
+                    <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                City
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="City" type="text"
+                                    formControlName="city" />
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['city']?.invalid && autoInsuranceForm?.controls['city']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="autoInsuranceForm?.controls['city']?.errors?.required">
+                                    Please enter city
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                     <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                DOB
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Date of Birth" type="text"
+                                    formControlName="dob" />
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['dob']?.invalid && autoInsuranceForm?.controls['dob']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="autoInsuranceForm?.controls['dob']?.errors?.required">
+                                    Please enter date of birth
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                     <div class=" col-md-6">
+                        <div class=" form-group">
+                            <label class=" form-control-label">
+                                Email
+                            </label>
+                            <div class=" input-group input-group-merge">
+                                <input class=" form-control" placeholder="Email" type="text"
+                                    formControlName="email" />
+                            </div>
+                            <span *ngIf="autoInsuranceForm?.controls['email']?.invalid && autoInsuranceForm?.controls['email']?.touched" class="validation-error-message text-danger">
+                                <span *ngIf="autoInsuranceForm?.controls['email']?.errors?.required">
+                                    Please enter email
                                 </span>
                             </span>
                         </div>
@@ -119,7 +167,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class=" col-md-6">
+                    <!-- <div class=" col-md-6">
                         <div class=" form-group">
                             <label class=" form-control-label">
                                 Vehicle (Make, Model, Year)
@@ -134,8 +182,8 @@
                                 </span>
                             </span>
                         </div>
-                    </div>
-                    <div class=" col-md-6">
+                    </div> -->
+                    <!-- <div class=" col-md-6">
                         <div class=" form-group">
                             <label class=" form-control-label">
                                 Call Time
@@ -153,7 +201,7 @@
                                 </span>
                             </span>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="text-right">
