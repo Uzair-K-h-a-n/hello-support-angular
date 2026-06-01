@@ -46,6 +46,8 @@ import { BlindTransferPingComponent } from './pages/forms/blind-transfer-ping/bl
 import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-rev.component';
 import { DebtSettlementSolutionComponent } from './pages/insurance-Components/debt-settlementsolution/debt-settlementsolution.component';
 import { DebtSettlementSolutionPublicComponent } from './pages/insurance-components-public/debt-settlementsolution-public/debt-settlementsolution-public.component';
+import { MedicareCmsComponent } from './pages/insurance-Components/medicare-cms/medicare-cms.component';
+import { MedicareCmsPublicComponent } from './pages/insurance-components-public/medicare-cms-public/medicare-cms-public.component';
 import { ACACPLAgentAvailabilityCheckComponent } from './pages/insurance-components-public/aca_cpl_agent_availability_check/aca_cpl_agent_availability_check.component';
 import { ContinuousGlucoseMonitoringComponent } from './pages/insurance-Components/continuous-glucose-monitoring/continuous-glucose-monitoring.component';
 
@@ -104,7 +106,9 @@ import { ContinuousGlucoseMonitoringComponent } from './pages/insurance-Componen
 		BlindTransferPingComponent,
 		P6MedTrbRevComponent,
 		DebtSettlementSolutionComponent,
-		DebtSettlementSolutionPublicComponent
+		DebtSettlementSolutionPublicComponent,
+		MedicareCmsComponent,
+		MedicareCmsPublicComponent
 	],
 	providers: [
 		{

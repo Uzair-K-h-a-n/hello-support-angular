@@ -20,6 +20,8 @@ export class AddEditUserComponent implements OnInit {
     {label:"Health Insurance",value:"health-insurance"},
     {label:"Life Insurance",value:"life-insurance"},
     {label:"MVA Compensation",value:"mva-compensation"},
+    {label:"Debt SettlementSolution",value:"debt-settlementsolution"},
+    {label:"Medicare CMS",value:"medicare-cms"},
     {label:"Debt Settlement Solution",value:"debt-settlementsolution"},
     {label:"Continuous Glucose Monitoring",value:"continuous-glucose-monitoring"},
   ]

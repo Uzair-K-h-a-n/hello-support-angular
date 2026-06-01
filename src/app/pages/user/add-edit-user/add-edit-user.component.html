@@ -105,17 +105,18 @@
                             
                         </div>
                     </div> -->
-                    <div formArrayName="pages"  class="col-md-6">
-                        <div style="display: inline-flex">
-                        <div *ngFor="let control of userForm?.get('pages')?.controls; let i = index" [formGroupName]="i">
-                          <div class="form-group">
-                            <label for="item{{i}}-value">{{items[i]?.label}}</label>
-                            <input type="checkbox" formControlName="checkbox" id="item{{i}}-value" [checked]="control?.get('checkbox')?.value" />
-                          </div>
+                    <div formArrayName="pages" class="col-md-12">
+                        <div class="row">
+                            <div *ngFor="let control of userForm?.get('pages')?.controls; let i = index" [formGroupName]="i" class="col-md-4">
+                                <div class="form-group">
+                                    <label for="item{{i}}-value">{{items[i]?.label}}</label>
+                                    <input type="checkbox" formControlName="checkbox" id="item{{i}}-value"
+                                        [checked]="control?.get('checkbox')?.value" />
+                                </div>
+                            </div>
                         </div>
                     </div>
-                      </div>
-                </div>
+                    </div>
 
             </div>
         </div>

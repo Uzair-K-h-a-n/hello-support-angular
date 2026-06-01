@@ -27,6 +27,8 @@ import { P6MedTrbRevComponent } from './pages/forms/p6-med-trb-rev/p6-med-trb-re
 import { DebtSettlementSolutionComponent } from './pages/insurance-Components/debt-settlementsolution/debt-settlementsolution.component';
 import { ContinuousGlucoseMonitoringComponent } from './pages/insurance-Components/continuous-glucose-monitoring/continuous-glucose-monitoring.component';
 import { DebtSettlementSolutionPublicComponent } from './pages/insurance-components-public/debt-settlementsolution-public/debt-settlementsolution-public.component';
+import { MedicareCmsComponent } from './pages/insurance-Components/medicare-cms/medicare-cms.component';
+import { MedicareCmsPublicComponent } from './pages/insurance-components-public/medicare-cms-public/medicare-cms-public.component';
 import { ACACPLAgentAvailabilityCheckComponent } from './pages/insurance-components-public/aca_cpl_agent_availability_check/aca_cpl_agent_availability_check.component';
 BlindTransferPingComponent
 const routes: Routes = [
@@ -103,6 +105,11 @@ const routes: Routes = [
 		component:DebtSettlementSolutionComponent
 	},
 	{
+		path:'medicare-cms',
+		canActivate: [AuthGuard],
+		component:MedicareCmsComponent
+	},
+	{
 		path:'affordable-medicare-public',
 		component:AffordableMedicarePlansPublicComponent
 	},
@@ -133,6 +140,10 @@ const routes: Routes = [
 	{
 		path:'debt-settlementsolution-public',
 		component:DebtSettlementSolutionPublicComponent
+	},
+	{
+		path:'medicare-cms-public',
+		component:MedicareCmsPublicComponent
 	},
 	{
 		path:'aca-data-submit-public',

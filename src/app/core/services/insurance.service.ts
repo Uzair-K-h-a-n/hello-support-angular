@@ -70,6 +70,14 @@ export class InsuranceService {
         const url = this.apiPath + `/insurance-public/debt-settlementsolution-public`;
         return this.http.post(url, debtData);
     }
+    public addMedicareCms(medicareCmsData) {
+        const url = this.apiPath + `/insurance/medicare-cms`;
+        return this.http.post(url, medicareCmsData);
+    }
+    public addMedicareCmsPublic(medicareCmsData) {
+        const url = this.apiPath + `/insurance-public/medicare-cms-public`;
+        return this.http.post(url, medicareCmsData);
+    }
     public addContinuousGlucoseMonitoringPublic(insuranceData) {
         const url = this.apiPath + `/insurance/continuous-glucose-monitoring-public`;
         return this.http.post(url, insuranceData);
